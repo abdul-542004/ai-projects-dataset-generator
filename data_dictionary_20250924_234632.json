@@ -1,0 +1,214 @@
+{
+  "metadata": {
+    "title": "Synthetic AI Projects Dataset",
+    "description": "500 synthetic AI project profiles with realistic firmographic characteristics and business outcomes",
+    "version": "1.0",
+    "created_date": "2025-09-24",
+    "total_records": 500,
+    "source": "Synthetic data based on published research and industry statistics"
+  },
+  "variables": {
+    "company_id": {
+      "type": "string",
+      "description": "Unique company identifier",
+      "format": "COMP_XXXX",
+      "example": "COMP_0001"
+    },
+    "company_size": {
+      "type": "categorical",
+      "description": "Company size classification",
+      "categories": [
+        "Small",
+        "Medium",
+        "Large"
+      ],
+      "distribution": "Small: 1-49 employees, Medium: 50-499 employees, Large: 500+ employees"
+    },
+    "employees": {
+      "type": "integer",
+      "description": "Number of employees",
+      "range": "1 to 50,000",
+      "distribution": "Log-normal distribution by company size"
+    },
+    "annual_revenue": {
+      "type": "float",
+      "description": "Annual revenue in USD",
+      "range": "$100K to $50B",
+      "note": "Correlated with employee count and industry"
+    },
+    "baseline_ebitda": {
+      "type": "float",
+      "description": "Pre-AI EBITDA in USD",
+      "calculation": "annual_revenue * ebitda_margin"
+    },
+    "ebitda_margin": {
+      "type": "float",
+      "description": "Pre-AI EBITDA margin percentage",
+      "range": "1% to 40%",
+      "note": "Industry-dependent distribution"
+    },
+    "industry": {
+      "type": "categorical",
+      "description": "Primary industry sector",
+      "categories": [
+        "Technology",
+        "Financial Services",
+        "Healthcare",
+        "Manufacturing",
+        "Retail/E-commerce",
+        "Professional Services",
+        "Media/Entertainment",
+        "Energy/Utilities",
+        "Transportation/Logistics",
+        "Education",
+        "Government",
+        "Other"
+      ],
+      "distribution": "Weighted by AI adoption patterns"
+    },
+    "company_age": {
+      "type": "integer",
+      "description": "Company age in years",
+      "range": "1 to 150",
+      "distribution": "Exponential with mean=15"
+    },
+    "region": {
+      "type": "categorical",
+      "description": "Geographic region",
+      "categories": [
+        "North America",
+        "Europe",
+        "Asia-Pacific",
+        "Other"
+      ],
+      "distribution": "North America: 45%, Europe: 30%, Asia-Pacific: 20%, Other: 5%"
+    },
+    "ownership": {
+      "type": "categorical",
+      "description": "Ownership structure",
+      "categories": [
+        "Private",
+        "Public"
+      ],
+      "note": "Large companies more likely to be public"
+    },
+    "growth_stage": {
+      "type": "categorical",
+      "description": "Company growth stage",
+      "categories": [
+        "Startup",
+        "Growth",
+        "Mature",
+        "Declining"
+      ],
+      "correlation": "Based on company age"
+    },
+    "project_id": {
+      "type": "string",
+      "description": "Unique project identifier",
+      "format": "AI_PROJ_XXXX",
+      "example": "AI_PROJ_0001"
+    },
+    "project_type": {
+      "type": "categorical",
+      "description": "Type of AI implementation",
+      "categories": [
+        "Process Automation",
+        "Customer Analytics/Personalization",
+        "Predictive Analytics",
+        "Natural Language Processing",
+        "Computer Vision",
+        "Fraud Detection/Risk Management",
+        "Supply Chain Optimization",
+        "Other"
+      ],
+      "distribution": "Based on market adoption patterns"
+    },
+    "complexity": {
+      "type": "categorical",
+      "description": "Project complexity level",
+      "categories": [
+        "Basic",
+        "Intermediate",
+        "Advanced"
+      ],
+      "distribution": "Basic: 30%, Intermediate: 50%, Advanced: 20%"
+    },
+    "investment_amount": {
+      "type": "float",
+      "description": "Total project investment in USD",
+      "calculation": "Percentage of annual revenue (0.5%-4%) adjusted for complexity"
+    },
+    "ai_intensity": {
+      "type": "float",
+      "description": "AI investment as percentage of annual revenue",
+      "range": "0.005 to 0.04",
+      "significance": "Key variable for MIT J-curve correlation"
+    },
+    "deployment_months": {
+      "type": "integer",
+      "description": "Project deployment timeline in months",
+      "range": "3 to 36",
+      "average": "8 months",
+      "correlation": "Industry and complexity dependent"
+    },
+    "revenue_impact_pct": {
+      "type": "float",
+      "description": "Incremental revenue impact percentage",
+      "range": "-10% to +50%",
+      "median": "8%",
+      "correlation": "Strong correlation with AI intensity (r=0.72)"
+    },
+    "ebitda_impact_pct": {
+      "type": "float",
+      "description": "Incremental EBITDA impact percentage",
+      "range": "-15% to +80%",
+      "median": "12%",
+      "note": "Typically 1.1-1.8x revenue impact due to efficiency gains"
+    },
+    "valuation_multiple_expansion": {
+      "type": "float",
+      "description": "Valuation multiple expansion",
+      "range": "-1.0x to +4.0x",
+      "median": "0.3x",
+      "correlation": "r=0.64 with successful implementations"
+    },
+    "annual_roi": {
+      "type": "float",
+      "description": "Annual return on investment",
+      "calculation": "(revenue_increase + ebitda_increase) / 2 / investment_amount"
+    },
+    "payback_months": {
+      "type": "float",
+      "description": "Investment payback period in months",
+      "calculation": "investment_amount / monthly_ebitda_increase",
+      "cap": "120 months maximum"
+    },
+    "is_successful": {
+      "type": "boolean",
+      "description": "Whether project achieved measurable business benefits",
+      "base_rate": "66% (based on CEO surveys)",
+      "adjustments": "Industry, project type, company size, and timeline factors"
+    },
+    "has_kpi_tracking": {
+      "type": "boolean",
+      "description": "Whether project has formal KPI tracking",
+      "distribution": "Large: 60%, Medium: 40%, Small: 25%",
+      "impact": "+35% EBITDA improvement when present"
+    },
+    "is_mature_implementation": {
+      "type": "boolean",
+      "description": "Whether organization has mature AI capabilities",
+      "distribution": "Small: 15%, Medium: 8%, Large: 3%",
+      "correlation": "r=0.67 with better outcomes"
+    }
+  },
+  "research_basis": {
+    "mit_j_curve": "AI intensity vs revenue growth correlation",
+    "ceo_survey": "66% report measurable benefits (various industry surveys)",
+    "kpi_impact": "McKinsey research on KPI tracking impact on EBIT",
+    "size_maturity": "Inverse correlation between company size and AI maturity",
+    "roi_timeline": "Forrester Q2 AI Pulse Survey on ROI expectations",
+    "productivity_gains": "20-30% typical gains from enterprise AI (IBM Institute)"
+  }
+}
