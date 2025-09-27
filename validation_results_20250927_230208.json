@@ -1,0 +1,20 @@
+{
+  "j_curve_validation": {
+    "low_intensity_avg_growth": 1.0232558139534884,
+    "high_intensity_avg_growth": 18.461052631578944,
+    "intensity_revenue_correlation": 0.6806695863398226
+  },
+  "ceo_benefits_rate": 0.926,
+  "kpi_impact_difference": 25.949019679233945,
+  "size_maturity_rates": {
+    "small": 0.1551155115511551,
+    "medium": 0.05405405405405406,
+    "large": 0.02040816326530612
+  },
+  "overall_metrics": {
+    "success_rate": 0.692,
+    "avg_revenue_impact": 10.829220000000001,
+    "avg_ebitda_impact": 25.3876,
+    "avg_roi": 3.4358922
+  }
+}
